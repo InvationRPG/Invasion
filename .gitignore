@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/InvasionGameMultiplayer/Library
+/InvasionGameMultiplayer/Temp
+/InvasionGameMultiplayer/ProjectSettings
+/InvasionGameMultiplayer/UserSettings
