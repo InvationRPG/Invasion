@@ -61,6 +61,10 @@ public class Player : NetworkBehaviour
     public void ChangeHealthValue(int newValue)
     {
         _SyncHealth = newValue;
+        if (_SyncHealth <= 0)
+        {
+            NetworkServer.Destroy(gameObject);
+        }
     }
 
     [Command]
