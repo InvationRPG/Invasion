@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class SeverManager : NetworkManager
+public class MyNetworkManager : NetworkManager
 {
     public override void OnStartServer()
     {
+        base.OnStartServer();
         Debug.Log("Server Started!");
     }
 
     public override void OnStopServer()
     {
+        base.OnStartServer();
         Debug.Log("Server Stopped!");
     }
 
-    [System.Obsolete]
-    public override void OnClientConnect(NetworkConnection conn)
+    public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
-        Debug.Log("User: " + conn.connectionId + " connected.");
+        base.OnServerAddPlayer(conn);
+        Debug.Log($"User: {conn.connectionId} connected!");
     }
+
 
     [System.Obsolete]
     public override void OnClientDisconnect(NetworkConnection conn)

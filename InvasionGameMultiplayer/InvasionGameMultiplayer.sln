@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{686c6792-87eb-cab8-a5cd-1b0ee1886f2b}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebTransport", "SimpleWebTransport.csproj", "{0c73d092-db02-95ec-8563-e35acc66ae4a}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Examples", "Mirror.Examples.csproj", "{3eb0d20b-512f-6940-299a-17735b77abfb}"
@@ -19,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "where-allocations", "where-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Authenticators", "Mirror.Authenticators.csproj", "{26c64d05-74f2-6213-e7a4-973a9667ceba}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{686c6792-87eb-cab8-a5cd-1b0ee1886f2b}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mirror.CodeGen", "Unity.Mirror.CodeGen.csproj", "{e1b1e7eb-6a9c-ad3f-2a27-34b180057bb9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Editor", "Mirror.Editor.csproj", "{1e1f9218-2e1b-f5df-8d8d-721983f4aa62}"
@@ -30,8 +30,6 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{686c6792-87eb-cab8-a5cd-1b0ee1886f2b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{686c6792-87eb-cab8-a5cd-1b0ee1886f2b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0c73d092-db02-95ec-8563-e35acc66ae4a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0c73d092-db02-95ec-8563-e35acc66ae4a}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3eb0d20b-512f-6940-299a-17735b77abfb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,6 +46,8 @@ Global
 		{ae9f8d6f-198a-3346-4ecd-def18a1247ee}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26c64d05-74f2-6213-e7a4-973a9667ceba}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{26c64d05-74f2-6213-e7a4-973a9667ceba}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{686c6792-87eb-cab8-a5cd-1b0ee1886f2b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{686c6792-87eb-cab8-a5cd-1b0ee1886f2b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{e1b1e7eb-6a9c-ad3f-2a27-34b180057bb9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{e1b1e7eb-6a9c-ad3f-2a27-34b180057bb9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1e1f9218-2e1b-f5df-8d8d-721983f4aa62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
