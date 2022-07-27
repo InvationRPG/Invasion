@@ -12,7 +12,7 @@ public class Player : NetworkBehaviour
 
     public int Health;
     public GameObject[] HealthGos;
-    
+
 
     void Update()
     {
