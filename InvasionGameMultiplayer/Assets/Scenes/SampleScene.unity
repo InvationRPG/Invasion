@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242357111982357231, guid: 26ee4399b8bd8974ab9b4fd440de511d, type: 3}
+      propertyPath: _oreData
+      value: 
+      objectReference: {fileID: 11400000, guid: c71d5a68aa8f6ef45b8d74ee61776916, type: 2}
     - target: {fileID: 3018712459046577949, guid: 26ee4399b8bd8974ab9b4fd440de511d, type: 3}
       propertyPath: sceneId
       value: 3390807209
@@ -235,9 +239,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 1
-  orthographic size: 5.0094447
+  orthographic size: 3.8928645
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -709,6 +713,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242357111982357231, guid: 26ee4399b8bd8974ab9b4fd440de511d, type: 3}
+      propertyPath: _oreData
+      value: 
+      objectReference: {fileID: 11400000, guid: c71d5a68aa8f6ef45b8d74ee61776916, type: 2}
     - target: {fileID: 3018712459046577949, guid: 26ee4399b8bd8974ab9b4fd440de511d, type: 3}
       propertyPath: sceneId
       value: 3301806931
