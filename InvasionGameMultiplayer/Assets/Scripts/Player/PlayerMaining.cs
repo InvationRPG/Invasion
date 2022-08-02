@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
@@ -8,32 +6,28 @@ public class PlayerMaining : NetworkBehaviour
     [SerializeField]
     private GameObject _prefab;
 
-    [SerializeField]
     private GameObject _ore;
 
-    [SerializeField]
     private GameObject _pick;
 
-    [SerializeField]
     private GameObject _currentMainingMessage;
 
-    [SerializeField]
     private GameObject _child;
 
-    [SerializeField]
     private bool _prefabMove;
 
-    [SerializeField]
     private float _timer;
 
-    [SerializeField]
     private float _section;
 
     [SerializeField]
-    private float _digTimeSec;
+    private int _index;
 
     [SerializeField]
-    private float _minLevelPick;
+    private OreData[] _ores;
+
+
+
 
     private void Update()
     {
@@ -50,7 +44,9 @@ public class PlayerMaining : NetworkBehaviour
         _ore = other.gameObject;
         Ore OreComponent = _ore.GetComponent<Ore>();
 
-        if (_ore.tag != "Ore")
+        SelectIndexOre();
+
+        if (_index == -1)
             return;
 
         if (OreComponent.Player != null)
@@ -59,9 +55,7 @@ public class PlayerMaining : NetworkBehaviour
         OreComponent.Player = gameObject;
         InstantiateMessageMaining();
         _prefabMove = true;
-        _digTimeSec = OreComponent.DigTimeSec;
-        _minLevelPick = OreComponent.MinLevelPick;
-
+        
     }
 
     [ServerCallback]
@@ -70,21 +64,24 @@ public class PlayerMaining : NetworkBehaviour
         if (_ore == null)
             return;
 
-        if (_ore.tag != "Ore")
-            return;
-
-        //if (_ore.GetComponent<Ore>().Player.GetComponent<Player>().netId != netId)
-        //    return;
-
         DestroyMessageMaining();
 
         _ore.GetComponent<Ore>().Player = null;
         _prefabMove = false;
         _ore = null;
-        _digTimeSec = 0;
-        _minLevelPick = 0;
     }   
 
+
+    [Server]
+    private void SelectIndexOre()
+    {
+        if (_ore.tag == "Stone")
+            _index = 0;
+        else if (_ore.tag == "Iron")
+            _index = 1;
+        else
+            _index = -1;
+    }
 
     [TargetRpc]
     private void InstantiateMessageMaining()
@@ -100,6 +97,8 @@ public class PlayerMaining : NetworkBehaviour
         Destroy(_currentMainingMessage);
         _currentMainingMessage = null;
         _child = null;
+        _timer = 0;
+        _section = 0;
     }
 
     [TargetRpc]
@@ -109,14 +108,14 @@ public class PlayerMaining : NetworkBehaviour
         _currentMainingMessage.transform.position = TransformPrefab;
     }
 
-
     [TargetRpc]
     private void Maining()
     {
 
+
         if (Input.GetKey(KeyCode.X))
         {
-            _section = (_timer - 0) / 5 * 1;
+            _section = (_timer - 0) / _ores[_index].DigTimeSec * 1;
             _currentMainingMessage.transform.GetChild(0).gameObject.SetActive(false);
             _child.SetActive(true);
             _child.transform.localScale = new Vector3(_section, 0.3f);
@@ -124,7 +123,7 @@ public class PlayerMaining : NetworkBehaviour
 
             _timer += Time.deltaTime;
 
-            if (_timer >= 5)
+            if (_timer >= _ores[_index].DigTimeSec)
                 CmdMaininigOre();
 
         }

@@ -396,6 +396,10 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   _prefab: {fileID: 1013245918565786393, guid: 2160db82197262442894967edbe8df1f, type: 3}
+  _index: 0
+  _ores:
+  - {fileID: 11400000, guid: 45483fbda78638d46b1117767d24089d, type: 2}
+  - {fileID: 11400000, guid: 930d6526d47ab6c4ab67cbbb93e168e8, type: 2}
 --- !u!1 &6928171057751279015
 GameObject:
   m_ObjectHideFlags: 0

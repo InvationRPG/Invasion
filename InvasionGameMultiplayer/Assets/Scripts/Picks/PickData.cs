@@ -18,7 +18,7 @@ public class PickData : ScriptableObject
     [SerializeField]
     private int _speed;
 
-    public string SwordName
+    public string PickName
     {
         get
         {
