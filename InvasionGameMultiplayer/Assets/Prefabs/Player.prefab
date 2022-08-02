@@ -400,6 +400,8 @@ MonoBehaviour:
   _ores:
   - {fileID: 11400000, guid: 45483fbda78638d46b1117767d24089d, type: 2}
   - {fileID: 11400000, guid: 930d6526d47ab6c4ab67cbbb93e168e8, type: 2}
+  _picks:
+  - {fileID: 11400000, guid: 8f250074f7975cf4d9fff8ab77cec2f7, type: 2}
 --- !u!1 &6928171057751279015
 GameObject:
   m_ObjectHideFlags: 0

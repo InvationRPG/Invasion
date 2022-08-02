@@ -3,12 +3,23 @@ using Mirror;
 
 public class PlayerMaining : NetworkBehaviour
 {
-    [SerializeField]
-    private GameObject _prefab;
-
     private GameObject _ore;
 
+    private int _oreIndex;
+
+
+    [SerializeField]
     private GameObject _pick;
+
+    private int _pickIndex;
+
+    private int _pickSpeed;
+
+    private int _pickLevel;
+
+
+    [SerializeField]
+    private GameObject _prefab;
 
     private GameObject _currentMainingMessage;
 
@@ -16,18 +27,17 @@ public class PlayerMaining : NetworkBehaviour
 
     private bool _prefabMove;
 
+
     private float _timer;
 
     private float _section;
 
-    [SerializeField]
-    private int _index;
 
     [SerializeField]
     private OreData[] _ores;
 
-
-
+    [SerializeField]
+    private PickData[] _picks;
 
     private void Update()
     {
@@ -46,11 +56,13 @@ public class PlayerMaining : NetworkBehaviour
 
         SelectIndexOre();
 
-        if (_index == -1)
+        if (_oreIndex == -1)
             return;
 
         if (OreComponent.Player != null)
             return;
+
+        SelectPick();
 
         OreComponent.Player = gameObject;
         InstantiateMessageMaining();
@@ -73,15 +85,41 @@ public class PlayerMaining : NetworkBehaviour
 
 
     [Server]
+    private void SelectPick()
+    {
+        if (_pick != null)
+        {
+            SelectIndexPick();
+        }
+        else
+        {
+            _pickSpeed = 0;
+            _pickLevel = 0;
+        }
+    }
+
+    [Server]
     private void SelectIndexOre()
     {
         if (_ore.tag == "Stone")
-            _index = 0;
+            _oreIndex = 0;
         else if (_ore.tag == "Iron")
-            _index = 1;
+            _oreIndex = 1;
         else
-            _index = -1;
+            _oreIndex = -1;
     }
+
+    [Server]
+    private void SelectIndexPick()
+    {
+        if (_pick.GetComponent<Pick>().Name == "StonePick")
+            _pickIndex = 0;
+
+        _pickSpeed = _picks[_pickIndex].Speed;
+        _pickLevel = _picks[_pickIndex].Level;
+
+    }
+
 
     [TargetRpc]
     private void InstantiateMessageMaining()
@@ -112,10 +150,21 @@ public class PlayerMaining : NetworkBehaviour
     private void Maining()
     {
 
+        if (_pickLevel < _ores[_oreIndex].MinLevelPick)
+        {
+            _currentMainingMessage.transform.GetChild(0).gameObject.SetActive(false);
+            _currentMainingMessage.transform.GetChild(1).gameObject.SetActive(false);
+            _currentMainingMessage.transform.GetChild(2).gameObject.SetActive(true);
+            return;
+        }
+
+        _currentMainingMessage.transform.GetChild(2).gameObject.SetActive(false);
+
 
         if (Input.GetKey(KeyCode.X))
         {
-            _section = (_timer - 0) / _ores[_index].DigTimeSec * 1;
+
+            _section = (_timer - 0) / (_ores[_oreIndex].DigTimeSec - _pickSpeed) * 1;
             _currentMainingMessage.transform.GetChild(0).gameObject.SetActive(false);
             _child.SetActive(true);
             _child.transform.localScale = new Vector3(_section, 0.3f);
@@ -123,9 +172,8 @@ public class PlayerMaining : NetworkBehaviour
 
             _timer += Time.deltaTime;
 
-            if (_timer >= _ores[_index].DigTimeSec)
+            if (_timer >= _ores[_oreIndex].DigTimeSec - _pickSpeed)
                 CmdMaininigOre();
-
         }
         else
         {
@@ -148,6 +196,9 @@ public class PlayerMaining : NetworkBehaviour
     private void MaininigOre()
     {
         NetworkServer.Destroy(_ore);
+        _pickIndex = -1;
+        _oreIndex = -1;
+        _pickSpeed = 0;
         _ore = null;
     }
 

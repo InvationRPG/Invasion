@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a194f7916b1bb44823bf9c17d34955, type: 3}
   m_Name: 1_stone_pick
   m_EditorClassIdentifier: 
-  _pickName: 
-  _description: 
+  _pickName: StonePick
+  _description: asd
   _icon: {fileID: 0}
   _attackDamage: 0
-  _level: 0
-  _speed: 0
+  _level: 1
+  _speed: 2
