@@ -1,16 +1,19 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Ore", menuName = "Ore Data", order = 52)]
+[CreateAssetMenu(fileName = "New Ore", menuName = "Data/Ore Data", order = 52)]
 public class OreData : ScriptableObject
 {
     [SerializeField]
     private string _nameOre;
 
     [SerializeField]
-    private float _digTimeSec;
+    private int _digTimeSec;
 
     [SerializeField]
     private float _minLevelPick;
+
+    [SerializeField]
+    private GameObject _prefabNugget;
 
     public string OreName
     {
@@ -20,7 +23,7 @@ public class OreData : ScriptableObject
         }
     }
 
-    public float DigTimeSec
+    public int DigTimeSec
     {
         get
         {
@@ -35,5 +38,14 @@ public class OreData : ScriptableObject
             return _minLevelPick;
         }
     }
+
+    public GameObject PrefabNugget
+    {
+        get
+        {
+            return _prefabNugget;
+        }
+    }
+
 
 }

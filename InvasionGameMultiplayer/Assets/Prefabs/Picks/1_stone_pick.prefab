@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 642540362570888733}
   m_Layer: 0
   m_Name: 1_stone_pick
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1395429928f1d4b4f98e75d3fb277188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordData: {fileID: 11400000, guid: 8f250074f7975cf4d9fff8ab77cec2f7, type: 2}
+  _name: Stone Pick
 --- !u!1 &2334862497427133641
 GameObject:
   m_ObjectHideFlags: 0

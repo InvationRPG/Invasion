@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a22603d5b1aeab7478693bef26b3116e, type: 3}
-  m_Name: Stone
+  m_Name: stoneOre
   m_EditorClassIdentifier: 
   _nameOre: Stone
   _digTimeSec: 5
-  _minLevelPick: 2
+  _minLevelPick: 0
+  _prefabNugget: {fileID: 7599106661641655505, guid: 8856314ecb3baa24ea6e7b27f67ddfff, type: 3}

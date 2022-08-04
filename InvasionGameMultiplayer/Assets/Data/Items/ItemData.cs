@@ -1,14 +1,20 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Pick", menuName = "Pick Data", order = 51)]
-public class PickData : ScriptableObject
+[CreateAssetMenu(fileName = "New Item", menuName = "Data/Item Data", order = 51)]
+public class ItemData : ScriptableObject
 {
     [SerializeField]
-    private string _pickName;
+    private string _name;
+
     [SerializeField]
     private string _description;
+
     [SerializeField]
     private Sprite _icon;
+
+    [SerializeField]
+    private GameObject _prefabItem;
+
     [SerializeField]
     private int _attackDamage;
 
@@ -18,19 +24,39 @@ public class PickData : ScriptableObject
     [SerializeField]
     private int _speed;
 
-    public string PickName
+    [SerializeField]
+    private Typeobjects _type;
+
+    public string Name
     {
         get
         {
-            return _pickName;
+            return _name;
         }
     }
+
 
     public string Description
     {
         get
         {
             return _description;
+        }
+    }
+
+    public GameObject PrefabItem
+    {
+        get
+        {
+            return _prefabItem;
+        }
+    }
+
+    public Typeobjects Type
+    {
+        get
+        {
+            return _type;
         }
     }
 
@@ -66,5 +92,4 @@ public class PickData : ScriptableObject
             return _speed;
         }
     }
-
 }

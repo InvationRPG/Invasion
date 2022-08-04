@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a194f7916b1bb44823bf9c17d34955, type: 3}
-  m_Name: 1_stone_pick
+  m_Script: {fileID: 11500000, guid: d0073c54a554e8d44b9d1c926ccec84d, type: 3}
+  m_Name: StonePick
   m_EditorClassIdentifier: 
-  _pickName: StonePick
-  _description: asd
+  _name: Stone Pick
+  _description: Simple stone pick
   _icon: {fileID: 0}
+  _prefabItem: {fileID: 1821455287228146550, guid: 5c91af010c735ff488c25d65c67b0f3b, type: 3}
   _attackDamage: 0
   _level: 1
-  _speed: 2
+  _speed: 4
+  _type: 1

@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 7198022979713843599}
   - component: {fileID: 4429022365784658221}
   - component: {fileID: 4308158876051247723}
+  - component: {fileID: -3670418953027295683}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -395,13 +396,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  _pick: {fileID: 0}
   _prefab: {fileID: 1013245918565786393, guid: 2160db82197262442894967edbe8df1f, type: 3}
-  _index: 0
   _ores:
   - {fileID: 11400000, guid: 45483fbda78638d46b1117767d24089d, type: 2}
   - {fileID: 11400000, guid: 930d6526d47ab6c4ab67cbbb93e168e8, type: 2}
   _picks:
   - {fileID: 11400000, guid: 8f250074f7975cf4d9fff8ab77cec2f7, type: 2}
+--- !u!114 &-3670418953027295683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6082070401590773785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d96fcb85026274cb28e4b4c530c8ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  _inventoryItems: []
+  _inventoryPrefab: {fileID: 5238414181967001189, guid: 6bc86e0846ad99247a241d91b7e15298, type: 3}
 --- !u!1 &6928171057751279015
 GameObject:
   m_ObjectHideFlags: 0
