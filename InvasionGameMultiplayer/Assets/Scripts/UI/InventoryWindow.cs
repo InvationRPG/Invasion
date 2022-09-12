@@ -1,7 +1,7 @@
 using UnityEngine;
-using Mirror;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using Mirror;
 
 public class InventoryWindow : NetworkBehaviour
 {
@@ -9,9 +9,10 @@ public class InventoryWindow : NetworkBehaviour
     [SerializeField] RectTransform _itemsPanel;
     List<GameObject> _drawIcons = new List<GameObject>();
 
-    private void Start()
+    private void Awake()
     {
-        _inventoryController = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryController>();
+        GameObject _player = GameObject.FindGameObjectWithTag("Player");
+        _inventoryController = _player.GetComponent<InventoryController>();
         _itemsPanel = transform.GetChild(0).GetComponent<RectTransform>();
         _inventoryController.onInventoryClose += OnInventoryClose;
         Redraw();
@@ -25,7 +26,7 @@ public class InventoryWindow : NetworkBehaviour
         ClearDrawn();
         foreach (var item in _inventoryController._inventoryItems)
         {
-            var icon = new GameObject("Icon");
+            var icon = new GameObject(item.Name);
             icon.AddComponent<Image>().sprite = item.Icon;
             icon.transform.SetParent(_itemsPanel);
             _drawIcons.Add(icon);

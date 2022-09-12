@@ -19,19 +19,22 @@ public class InventoryController : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        if (!isLocalPlayer)
+            return;
+
         if (Input.GetKey(KeyCode.I))
             CmdOpenInventory();
         if (Input.GetKey(KeyCode.Escape))
             CmdCloseInventory();
     }
-
-    [Server]
+  
+    [ServerCallback]
     public void AddItem(ItemData item)
     {
         _inventoryItems.Add(item);
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     private void CmdOpenInventory()
     {
         RpcOpenInventory();
@@ -49,7 +52,7 @@ public class InventoryController : NetworkBehaviour
         inventory.transform.SetParent(GameObject.Find("Canvas").transform);
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     private void CmdCloseInventory()
     {
         RpcCloseInventory();
