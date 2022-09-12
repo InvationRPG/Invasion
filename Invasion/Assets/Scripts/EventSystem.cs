@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using Mirror;
 
 public class EventSystem : NetworkBehaviour
@@ -9,4 +10,7 @@ public class EventSystem : NetworkBehaviour
     {
         singleton = this;
     }
+
+    public UnityEvent<GameObject, GameObject, bool> OnZoomCamera = new UnityEvent<GameObject, GameObject, bool>();
+
 }
