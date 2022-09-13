@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{32097A71-46DC-4407-6D96-4450A1624C3D}</ProjectGuid>
+    <ProjectGuid>{A391479B-0B5E-4806-212B-E7DF8DEBED6A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Mirror.Components</AssemblyName>
+    <AssemblyName>FizzySteamworks</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -56,42 +56,19 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscoveryHUD.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkStatistics.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\SpatialHashing\Grid2D.cs" />
-    <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransformBase.cs" />
-    <Compile Include="Assets\Mirror\Components\Experimental\NetworkLerpRigidbody.cs" />
-    <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscovery.cs" />
-    <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransform.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Scene\SceneInterestManagement.cs" />
-    <Compile Include="Assets\Mirror\Components\Discovery\ServerResponse.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkTransform2k\NetworkTransformSnapshot.cs" />
-    <Compile Include="Assets\Mirror\Components\GUIConsole.cs" />
-    <Compile Include="Assets\Mirror\Components\AssemblyInfo.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkPingDisplay.cs" />
-    <Compile Include="Assets\Mirror\Components\Experimental\NetworkRigidbody2D.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkRoomManager.cs" />
-    <Compile Include="Assets\Mirror\Components\Experimental\NetworkRigidbody.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkAnimator.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Team\NetworkTeam.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkTransform2k\NetworkTransformChild.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkLobbyPlayer.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkTransform2k\NetworkTransformBase.cs" />
-    <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransformChild.cs" />
-    <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscoveryBase.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Match\NetworkMatch.cs" />
-    <Compile Include="Assets\Mirror\Components\Discovery\ServerRequest.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Team\TeamInterestManagement.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkLobbyManager.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Match\MatchInterestManagement.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Distance\DistanceInterestManagementCustomRange.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Distance\DistanceInterestManagement.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkTransform2k\NetworkTransform.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkRoomPlayer.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\SpatialHashing\SpatialHashingInterestManagement.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\NextCommon.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\NextClient.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\LegacyServer.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\FizzySteamworks.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\LegacyClient.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\NextServer.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\IServer.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\BidirectionalDictionary.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\IClient.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\LegacyCommon.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Mirror\Components\Mirror.Components.asmdef" />
+    <None Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\FizzySteamworks.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -774,6 +751,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="com.rlabrecque.steamworks.net.csproj">
+      <Project>{17797397-35F6-423C-C05E-57882C2BB90E}</Project>
+      <Name>com.rlabrecque.steamworks.net</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.csproj">
       <Project>{6BBFD0A6-9825-7E4D-F620-376919F0408A}</Project>
       <Name>Mirror</Name>

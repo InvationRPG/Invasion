@@ -12,7 +12,7 @@ public class PlayerActions : NetworkBehaviour
 
     private void Start()
     {
-        EventSystem.singleton.OnZoomCamera.AddListener(ShowMessage);
+        EventSystem.singleton.OnZoomCamera.AddListener(CameraZoom);
         _isZoom = false;
 
         if (isLocalPlayer)
@@ -20,7 +20,7 @@ public class PlayerActions : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void ShowMessage(GameObject owner, GameObject target, bool typeZoom)
+    private void CameraZoom(GameObject owner, GameObject target, bool typeZoom)
     {
         StartCoroutine(ZoomCamera(GetComponent<PlayerController>()._camera, typeZoom));
     }
@@ -70,5 +70,8 @@ public class PlayerActions : NetworkBehaviour
         _isZoom = false;
         yield break;
     }
+
+
+
 
 }

@@ -12,5 +12,5 @@ public class EventSystem : NetworkBehaviour
     }
 
     public UnityEvent<GameObject, GameObject, bool> OnZoomCamera = new UnityEvent<GameObject, GameObject, bool>();
-
+    public UnityEvent<GameObject, bool> UserInteraction = new UnityEvent<GameObject, bool>();
 }

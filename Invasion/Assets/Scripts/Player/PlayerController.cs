@@ -1,6 +1,5 @@
 using UnityEngine;
 using Mirror;
-using UnityEngine.Events;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -46,6 +45,7 @@ public class PlayerController : NetworkBehaviour
         if (collision.gameObject.tag != "Player") return;
 
         EventSystem.singleton.OnZoomCamera.Invoke(gameObject, collision.gameObject, true);
+        EventSystem.singleton.UserInteraction.Invoke(gameObject, true);
     }
 
     [ServerCallback]
@@ -54,6 +54,8 @@ public class PlayerController : NetworkBehaviour
         if (collision.gameObject.tag != "Player") return;
 
         EventSystem.singleton.OnZoomCamera.Invoke(gameObject, collision.gameObject, false);
+        EventSystem.singleton.UserInteraction.Invoke(gameObject, false);
+
     }
 
 }
