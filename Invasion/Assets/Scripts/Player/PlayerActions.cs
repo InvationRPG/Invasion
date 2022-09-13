@@ -9,7 +9,6 @@ public class PlayerActions : NetworkBehaviour
     private bool _isZoom;
     private Transform pos;
 
-
     private void Start()
     {
         EventSystem.singleton.OnZoomCamera.AddListener(CameraZoom);

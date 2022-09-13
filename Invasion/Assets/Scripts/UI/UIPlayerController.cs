@@ -4,7 +4,6 @@ using System.Collections;
 
 public class UIPlayerController : NetworkBehaviour
 {
-
     [SerializeField] private GameObject _slideButton;
     [SerializeField] private AnimationCurve _slideButtonAnimation;
     private bool _isSlide;
@@ -17,8 +16,6 @@ public class UIPlayerController : NetworkBehaviour
     [ClientRpc]
     private void UserInteraction(GameObject user, bool action)
     {
-        if (!isLocalPlayer) return;
-
         StartCoroutine(Slide(action));
     }
 
@@ -26,7 +23,7 @@ public class UIPlayerController : NetworkBehaviour
     {
         if (_isSlide == true) yield break;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
 
         _isSlide = true;
 

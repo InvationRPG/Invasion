@@ -57,15 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\NextCommon.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\NextClient.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\LegacyServer.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\FizzySteamworks.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\LegacyClient.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\NextServer.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\IServer.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\BidirectionalDictionary.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\IClient.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\NextClient.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\LegacyClient.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\FizzySteamworks.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\LegacyCommon.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\LegacyServer.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\BidirectionalDictionary.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\IServer.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\IClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Runtime\Transport\FizzySteamworks\FizzySteamworks.asmdef" />
